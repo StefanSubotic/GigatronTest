@@ -6,11 +6,15 @@ public class GigatronShopTest extends BaseTest{
 
 PopupPage popupPage;
 
+HomePage homePage;
+
+
 @BeforeMethod
     public void setUp()
 {
    driver = openBrowser();
    popupPage = new PopupPage(driver);
+homePage = new HomePage(driver);
 
 }
 
@@ -18,6 +22,7 @@ PopupPage popupPage;
     public void ShopTest(){
     popupPage.clickOnPopup();
     popupPage.clickPrihvati();
+    homePage.inputSearch("Samsung");
 }
 
 @AfterMethod
