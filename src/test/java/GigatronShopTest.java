@@ -1,3 +1,4 @@
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -9,20 +10,28 @@ PopupPage popupPage;
 HomePage homePage;
 
 
+
+
 @BeforeMethod
     public void setUp()
 {
    driver = openBrowser();
    popupPage = new PopupPage(driver);
-homePage = new HomePage(driver);
+    homePage = new HomePage(driver);
 
 }
 
 @Test
     public void ShopTest(){
-    popupPage.clickOnPopup();
+
     popupPage.clickPrihvati();
     homePage.inputSearch("Samsung");
+
+    Assert.assertEquals(homePage.getResult.isDisplayed(), true, "SAMSUNG Galaxy S23+ 8/512GB Cream is displayed");
+
+    homePage.addToCartSamsung();
+
+    Assert.assertEquals(homePage.getCart(), "1");
 }
 
 @AfterMethod
