@@ -25,12 +25,12 @@ public class PopupPage extends BasePage {
         PageFactory.initElements(driver, this);
 
     }
-    public void clickOnPopup(){
+   /* public void clickOnPopup(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(iframe));
         driver.switchTo().frame(iframe);
         wait.until(ExpectedConditions.visibilityOf(close)).click();
-    }
+    }*/
 
     public void clickPrihvati()
     {
